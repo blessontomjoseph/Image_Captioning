@@ -46,7 +46,8 @@ if __name__ == '__main__':
               }
                   
     image=st.file_uploader('upload image')
-    st.image(image)
+    if image is not None:
+        st.image(image)
 
     apply = st.sidebar.button('generate caption')
 
