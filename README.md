@@ -12,8 +12,15 @@ By introducing three newly created parameters, the decoding process can be contr
 
 3. Factualness: The do_sample and top_p values contribute to controlling the factualness of the generated captions.
 
-each of whi are scaled from 1-5 to control its intensity
+each of which are scaled from 1-5 to control its intensity
 
 While it is important to note that the captions produced by these modified parameters may not always accurately convey the intended word meaning, still they provide an interesting representation for diversifying the generated text without requiring a complete understanding of the original parameters.
 
 try it here 👉 [**WebApp**](https://blessontomjoseph-image-captioning-app-ydv7q4.streamlit.app/)
+(the app is on freetier it  could run out of memory on multiple tries and crash) so,
+
+try this in local, clone the repository and the use the below code to create a docker image and run it
+```
+docker build -t <image_name> .
+docker run <image_name>
+```
