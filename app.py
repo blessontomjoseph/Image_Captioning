@@ -46,11 +46,11 @@ if __name__ == '__main__':
               }
                   
     image=st.file_uploader('upload image')
+    st.image(image)
+
     apply = st.sidebar.button('generate caption')
 
     if apply:
-        st.image(image)
-
         with st.spinner("getting model from 🤗..."):
             model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
         st.success('model ready!')
@@ -61,4 +61,4 @@ if __name__ == '__main__':
             
         st.success(f"""Success!~Elapsed Time: {response_time:.2f} seconds""")
         st.subheader("Generated Text:")
-        st.text_area(" ", caption, height=200, key="generated_text")
+        st.text_area(" ", caption, height=100, key="generated_text")
